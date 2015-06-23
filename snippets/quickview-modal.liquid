@@ -1,0 +1,50 @@
+<!-- Modal -->
+
+<!-- quick-view-container:end -->
+
+<script id="template-quickview" type="text/mustache">
+
+
+            <form id="quickview-add-item-form" action="/cart/add" method="post" class="variants clearfix">
+
+            
+                    <div class="product-vendor"><% vendor %></div>
+                    <div class="product-title"><% title %></div>
+
+                    <div id="product-variant">
+                        <select id="product-variant-select" name="id" data-listener="variants" data-producthandle="<% handle %>">
+                            <%#variants%>
+                                <option value="<% id %>"><% title %> - <% price %></option>
+                            <%/variants%>
+                        </select>
+                    </div>
+
+
+                    <div id="product-variants-target">                     
+                        <div data-option="1" class="product-option clearfix" data-option-position="0">
+                            <%#variants%>
+                                <a href="javascript:void(0);"  data-option-value="<% title %>" data-variant-id="<%id%>"><% title %></a>
+                            <%/variants%>
+                        </div>
+                    </div>
+                    <div class="product-variant-price-wrapper">
+                        <% price %>
+                    </div>
+
+                    <div class="selector-wrapper quantity-wrapper">
+                        <label>Quantity</label>
+                        <select id="product-variant-quantity" name="quantity" class="tc" data-target="quantity" data-itemid="<% id%>" >
+                        </select>
+                    </div>
+
+
+                    <div class="quickview-purchase-section">
+                        <div class="quickview-purchase">
+                            <p style="display:none">Sold Out</p>
+                            <input type="submit" id="product-add-to-cart" name="add" value="Add to bag" />
+                        </div>
+                    </div>
+
+            </form>
+
+</script>

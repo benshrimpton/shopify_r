@@ -1,0 +1,52 @@
+{% capture collection_handle %}{{ product-loop | handleize }}{% endcapture %}
+{% capture url %}{% if collection_handle != "" %}/collections/{{ product-loop }}{{ product.url }}{% else %}{{ product.url }}{% endif %}{% endcapture %}
+<div class="col-xs-6 col-md-4 col">
+
+    
+    <div class="collection-product" data-handle="{{ product.handle }}">
+
+            {% if product.price_min < product.compare_at_price_min %}
+            <span class="sale">Sale</span>
+            {% endif %}
+            <a class="anchor-block image-wrapper" href="{{ url }}">
+                <div class="image">
+                    {% if product.images.size ==1 %}
+                    <img src="{{ product.images.[0] | product_img_url: 'large'}}" alt="{{ product.title | escape  }}" class="img-fullwidth"/>
+                    {% else %}
+                    <img src="{{ product.images.[0] | product_img_url: 'large'}}" data-rollover="{{ product.images[1] | product_img_url: 'large'}}" alt="{{ product.title | escape  }}" class="img-fullwidth"/>
+                    {% endif %}
+                </div>
+            </a>
+
+            <div class="details">
+                <h2 class="title">{{ product.title }}</h2>
+                <span class="price">
+                {% if product.available %}
+                {% if product.compare_at_price_max > product.price %}
+                <del>{{ product.compare_at_price | money }}</del>
+                {% endif %}
+                {% if product.price_varies %}
+                <small><em>from</em></small>
+                {% endif %}
+                {{ product.price | money }} 
+                {% else %}
+                {{ product.price | money }} Sold Out
+                {% endif %}
+                </span>
+            </div>
+
+
+            <a class="anchor-block meta-wrapper" href="{{ url }}">
+                <div class="meta">
+                    <div class="display-table">
+                        
+                        <div class="display-table-cell">
+                            <div class="quickview-target-target"></div>                    
+                        </div>
+                    </div>
+                </div>
+            </a>
+    </div>
+
+
+</div>

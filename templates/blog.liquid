@@ -1,0 +1,44 @@
+<div id="blog">
+
+
+	<div class="row">
+		<div class="col-sm-8 col">
+			{% paginate blog.articles by 4 %}
+			<div class="blog-wrapper" id="ajax-wrapper">
+			    <section class="articles" id="ajax-target">
+			        {% for article in blog.articles %}
+			        	<article class="article">
+			           
+			                
+			                <div class="date">{{ article.created_at | date: "%a, %b %d, %y" }}</div>
+			                <h3>{{ article.title }}</h3>
+			                <div class="excerpt">
+			                    {{ article.excerpt }}
+			                </div>
+			                
+
+							<div class="read-more-wrapper">
+								<a href="{{ article.url }}" class="read-more">Read More</a>
+							</div> 
+			             
+			        	</article>
+			        	
+			        	
+			        {% endfor %}
+			    </section>
+			            
+			</div><!-- END ajax-wrapper -->
+			{% include 'pagination' %}
+
+			{% endpaginate %}		
+		</div>
+
+
+		<div class="col-sm-4">
+			<section class="instagram-wrapper" id="instagram-feed"></section>		
+		</div>
+
+
+	</div>
+
+</div>

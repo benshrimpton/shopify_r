@@ -1,0 +1,140 @@
+<div class="mobile-collection-filter-trigger">
+	Filter
+	{% if current_tags %}
+	:
+	{% for tag in current_tags %}
+		{{tag}}
+	{% endfor %}
+	{% endif %}
+
+</div>
+
+
+<div class="collection-filter-wrapper">
+
+	{% if current_tags %}
+	<section class="reset-filter">
+		<a href="{{collection.url}}">reset</a>
+	</section>
+	{% endif %}
+
+	<section class="type-filter">
+		<div class="filter-title">Clothing</div>
+		<ul>
+			{% for tag in current_tags %}
+				{% if tag contains 'type-' %}
+					{% assign has-type = true %}
+				{%break%}
+				{% endif %}
+			{% endfor %}
+
+
+			{% for product_type in collection.all_types %}
+			{% assign type = product_type | handle | prepend: 'type-' %}
+				{% if current_tags contains type %}
+				<li class="active">
+				{{ product_type | link_to_remove_tag: type }}
+				</li>			
+				{% else %}
+					{% if has-type %}	
+						<li>
+						{{ product_type | link_to_tag: type }}
+						</li>
+					{% else %}
+						<li>
+						{{ product_type | link_to_add_tag: type }}
+						</li>				
+					{% endif %}	
+				{% endif %}
+			{% endfor %}
+		</ul>		
+	</section>
+
+
+	<section class="vendor-filter">
+		<div class="filter-title">Brand</div>
+		<ul>
+			{% for tag in current_tags %}
+				{% if tag contains 'vendor-' %}
+					{% assign has-vendor = true %}
+				{%break%}
+				{% endif %}
+			{% endfor %}
+		
+			{% for product_vendor in collection.all_vendors %}
+			{% assign vendor = product_vendor | handle | prepend: 'vendor-' %}
+				{% if current_tags contains vendor %}
+				<li class="active">
+				{{ product_vendor | link_to_remove_tag: vendor }}
+				</li>			
+				{% else %}
+					{% if has-vendor %}	
+						<li>
+						{{ product_vendor | link_to_tag: vendor }}
+						</li>
+					{% else %}
+						<li>
+						{{ product_vendor | link_to_add_tag: vendor }}
+						</li>				
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</section>
+
+
+
+	<section class="size-filter">
+		<div class="filter-title">Size</div>
+		<ul>
+			{% for tag in current_tags %}
+				{% if tag contains 'size-' %}
+					{% assign has-size = true %}
+				{%break%}
+				{% endif %}
+			{% endfor %}
+
+		    {% for tag in collection.all_tags %}
+				{% if tag contains 'size-' %}
+				{% if current_tags contains tag %}
+				<li class="active">
+				  {{ tag | remove: "size-" | link_to_remove_tag: tag }}
+				</li>
+				{% else %}
+					{% if has-size %}	
+						<li>
+						{{ tag | remove: "size-" | link_to_tag: tag }}
+						</li>
+					{% else %}
+						<li>
+						{{ tag | remove: "size-" | link_to_add_tag: tag }}
+						</li>				
+					{% endif %}
+				{% endif %}
+		    {% endif %}
+		    {% endfor %}
+
+		</ul>
+
+		</ul>
+	</section>
+
+
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

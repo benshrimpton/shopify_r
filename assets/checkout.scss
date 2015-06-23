@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'Vanitas-Regular';
+    src: url('Vanitas-Regular.eot');
+    src: url('Vanitas-Regular.eot?#iefix') format('embedded-opentype'),
+         url('Vanitas-Regular.woff') format('woff'),
+         url('Vanitas-Regular.ttf') format('truetype'),
+         url('Vanitas-Regular.svg#MonoSocialIconsFont') format('svg');
+    src: url('Vanitas-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'futura_ptbook';
+    src: url('ftn45-webfont-webfont.eot');
+    src: url('ftn45-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ftn45-webfont-webfont.woff') format('woff'),
+         url('ftn45-webfont-webfont.ttf') format('truetype'),
+         url('ftn45-webfont-webfont.svg#futura_ptbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+::selection {
+  background: black;
+  color: white;
+}
+
+body{
+    font-family: 'futura_ptbook';
+}
+
+.shop{
+    float: none;
+}
+.shop__name{
+  font-family: 'Vanitas-Regular';
+  text-transform: uppercase;
+  text-align: center;
+}
+
+input[type="submit"]{
+  background-color:black;
+  color:white;
+  border-radius:0;
+}
+input[type="submit"]:hover{
+    background-color:black;
+}
+a{
+    color:black;
+}
+.payment-due__currency{
+  background-color:black;
+}
+.payment-due__price{
+  color:black;
+}
+.field--focus{
+    box-shadow:0 0 0 2px black !important;
+}
+
+.chrome input[type='checkbox']:checked, .safari input[type='checkbox']:checked{
+  background-color:black !important;
+  border-color:black !important;
+}

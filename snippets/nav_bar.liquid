@@ -1,0 +1,285 @@
+{% for item in cart.items %}
+{% if item.product.handle == "embroidery" %}
+{% assign embroidery_size = item.quantity %}
+{% break %}
+{% endif %}
+{% endfor %}
+{% assign cart_size = cart.item_count | minus : embroidery_size %}
+<nav class="yamm navbar navbar-default navbar-fixed-top main-nav" role="navigation" id="rv-nav">
+{% comment %}
+    {% capture banner_top_active %}banner_top_active{% endcapture %}
+    {% capture banner_top %}banner_top{% endcapture %}
+    {% if settings[banner_top_active] %}
+    <div class="banner-top">{{ settings[banner_top] }}</div>
+    {% endif %}
+{% endcomment %}
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand logo" href="/"></a>
+
+            <div class="navbar-right-nav">
+                <ul class="clearfix">
+                    <li><a class="search-trigger" href="#">search</a></li>
+                    <li><a class="subscribe-trigger" href="#">newsletter</a></li>
+                    <li><a class="account-trigger" href="/account">account</a></li>
+                    <li><a class="bag-trigger" href="#">my tote : <span id="cart-item-count">{{ cart_size }}</span></a></li>
+                </ul>
+            </div>
+
+
+
+
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-navbar">
+            <ul class="nav navbar-nav">
+
+                <li>
+                    <a href="/collections/reservoir-clothing">CONCEPT</a>
+                </li>
+
+                <li>
+                    <a href="/collections/reservoir-clothing">NEW ARRIVALS</a>
+                </li>
+                <li class="dropdown yamm-fw">
+                    <a href="#" class="dropdown-toggle">clothing</a>
+                    <ul class="dropdown-menu">
+                        <div class="yamm-content">
+                            <div class="yamm-content-container">
+                                <div class="row">
+                                    <div class="col-sm-2 col">
+                                        <div class="col-title">shop by</div>
+                                        <ul class="left">
+                                            <li><a href="/">what's new</a></li>
+                                            <li><a href="/">editor's picks</a></li>
+                                            <li><a href="/">season</a></li>
+                                            <li><a href="/">sale</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-3 col">
+                                        <div class="col-title">clothing</div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <ul>
+                                                    <li><a href="/collections/reservoir-clothing">view all</a></li>
+                                                    <li><a href="/">tops</a></li>
+                                                    <li><a href="/">pants</a></li>
+                                                    <li><a href="/">shorts</a></li>
+                                                    <li><a href="/">skirts</a></li>
+                                                    <li><a href="/">dresses</a></li>
+                                                    <li><a href="/">knits</a></li>
+                                                    <li><a href="/">coats</a></li>
+                                                    <li><a href="/">jackets</a></li>
+                                                    <li><a href="/">coats</a></li>
+                                                </ul>                                                
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <ul>
+                                                    <li><a href="/">view all</a></li>
+                                                    <li><a href="/">tops</a></li>
+                                                    <li><a href="/">pants</a></li>
+                                                    <li><a href="/">shorts</a></li>
+                                                    <li><a href="/">skirts</a></li>
+                                                </ul>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 col">
+                                        <div class="col-title">brands</div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <ul>
+                                                    <li><a href="/">acne studio</a></li>
+                                                    <li><a href="/">agnona</a></li>
+                                                    <li><a href="/">ALC</a></li>
+                                                    <li><a href="/">alexander wang</a></li>
+                                                    <li><a href="/">american retro</a></li>
+                                                    <li><a href="/">anita ko</a></li>
+                                                    <li><a href="/">baja east</a></li>
+                                                    <li><a href="/">Denis Colomb</a></li>
+                                                    <li><a href="/">base range</a></li>
+                                                    <li><a href="/">dosa</a></li>
+                                                </ul>                                                
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <ul>
+                                                    <li><a href="/">EF collection</a></li>
+                                                    <li><a href="/">Ellery</a></li>
+                                                    <li><a href="/">Equipment</a></li>
+                                                    <li><a href="/">IRO</a></li>
+                                                    <li><a href="/">Karen Walker</a></li>
+                                                </ul>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col menu-image-col">                                   
+                                        <div class="menu-image-wrapper">
+                                            <img src="{{ 'warmandcool.jpg' | asset_url }}" class="img-fullwidth" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </ul>
+                    </li>
+
+
+
+                
+                <li>
+                    <a href="/collections/reservoir-clothing">BRANDS</a>
+                </li>
+                <li>
+                    <a href="#">SHOES</a>
+                </li>
+                <li>
+                    <a href="#">BAGS</a>
+                </li>
+                <li>
+                    <a href="#">ACCESSORIES</a>
+                </li>
+                <li>
+                    <a href="#">Bazaar</a>
+                </li>
+                <li>
+                    <a href="/blogs/blog">EDITORIAL</a>
+                </li>   
+                <li>
+                    <a href="#">SALE</a>
+                </li>  
+                </ul>
+            </div>
+        </div>
+
+
+
+</nav>
+
+<section class="section-overlay search-overlay">
+
+    <span class="close-icon"></span>
+    <div class="display-table">
+        <div class="display-table-cell">
+
+            <form class="" role="search" action="/search" id="search-form">
+
+                <span class="input input--hoshi">
+                    <input class="input__field input__field--hoshi search-input" name="q" type="search">
+                    <input type="hidden" name="type" value="product">
+                    <label class="input__label input__label--hoshi">
+                        <span class="input__label-content input__label-content--hoshi">Product Search</span>
+                    </label>
+                </span>
+            </form>
+
+        </div>
+    </div>
+
+
+</section>
+
+<section class="section-overlay subscribe-overlay">
+
+    <span class="close-icon"></span>
+    <div class="display-table">
+        <div class="display-table-cell">
+
+            <form action="http://dresshirt.us3.list-manage.com/subscribe/post-json?u=d94b2a28169f44d9fac2ad184&amp;id=1fa04c008c" method="post" name="mc-embedded-subscribe-form" class="validate mc-embedded-subscribe-form" target="_blank" novalidate>
+
+                <span class="input input--hoshi">
+                    
+                    <input class="input__field input__field--hoshi search-input required email left" name="EMAIL" type="email">
+                    <label class="input__label input__label--hoshi">
+                        <span class="input__label-content input__label-content--hoshi">Newsletter</span>
+                    </label>
+                </span>
+                <input type="submit" value="Subscribe" name="subscribe" class="mc-embedded-subscribe right">
+                <div class="response mc-response"></div>
+            </form>
+
+        </div>
+    </div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  <div id="mini-cart-overlay"></div> -->
+<div id="mini-cart-target"><!-- the below template gets inserted here --></div>
+<script id="template-mini-cart" type="text/mustache">
+                <menu id="mini-cart">
+                <div class="mini-cart-inner">
+                    <header class="mini-cart-header clearfix">
+                        <a href="#" id="mini-cart-close" class="toggle-mini-cart">Continue Shopping</a>
+                    </header>
+                        <div class="mini-cart-body">
+                                    <%#items%>
+                                    <div class="mini-cart-item-wrapper clearfix" >
+                                                <div class="mini-cart-item-thumbnail">
+                                                            <a href="<% url %>">
+                                                            <img src="<% image %>" alt="<% title %>" class="">
+                                                            </a>
+                                                </div>
+                                                <div class="mini-cart-item-title">
+                                                            <a href="<%url%>">
+                                                            <%product_title%>
+                                                            </a>
+                                                </div>
+                                                <div class="mini-cart-item-variant-options">
+                                                            <label>Size :</label>
+                                                            <%#variant_options%>
+                                                            <span><% . %></span>
+                                                            <%/variant_options%>
+                                                        
+                                                </div>
+                                                <div class="mini-cart-item-quantity">
+                                                            <label>Qty :</label>
+                                                            <span><% quantity %></span>
+                                                </div>
+                                                <div class="mini-cart-line-price">
+                                                            <div class="line-price">
+                                                                        <label>Price :</label>
+                                                                        <span class="price"><%line_price%></span>
+                                                                        <%#embroidery_price%>
+                                                                        <span class="embroidery_price"> + <% embroidery_price %></span>
+                                                                        <%/embroidery_price%>
+                                                            </div>
+                                                </div>
+                                                <div class="mini-cart-item-remove">
+                                                            <a href="#" class="mini-cart-remove" data-line="<%line%>" data-variantid = "<%variant_id%>" data-hasembroidery="<%#properties%>true<%/properties%><%^properties%>false<%/properties%>" data-quantity="<% quantity %>">Remove</a>
+                                                </div>
+                                    </div>
+                                    <%/items%>
+                                    <%^items%>
+                                    <div class="mini-cart-empty">
+                                                        <span class="mini-cart-empty-message">Your tote is empty</span>
+                                    </div>
+                                    <%/items%>
+                        </div>
+                        <div class="mini-cart-footer">
+                                    <div class="mini-cart-total clearfix">
+                                                        Total:<span class="total-price"><%total_price%></span>
+                                    </div>
+                                    <a href="/cart" id="mini-cart-checkout" title="Cart Checkout">Go to cart</a>
+                        </div>
+                </div>
+                </menu>
+</script>

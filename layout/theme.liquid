@@ -1,0 +1,102 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+    <title>
+    {{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    </title>
+    {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}" />
+    {% endif %}
+    <link rel="shortcut icon" href="#" type="image/png" />
+    <link rel="canonical" href="{{ canonical_url }}" />
+
+    <!-- Social Media  -->
+    {% include 'fb-open-graph-tag' %}
+    {% include 'twitter-cards' %}
+    <!-- theme stylesheets -->
+
+    {{ 'fonts.css' | asset_url | stylesheet_tag }}
+    {{ 'normalize.css' | asset_url | stylesheet_tag }}
+    {{ 'reset.css' | asset_url | stylesheet_tag }}
+    {{ 'bootstrap.css' | asset_url | stylesheet_tag }}
+    {{ 'yamm.css' | asset_url | stylesheet_tag }}
+    {{ 'royalslider.css' | asset_url | stylesheet_tag }}
+    {{ 'rs-default.css' | asset_url | stylesheet_tag }}
+    {{ 'owl.carousel.css' | asset_url | stylesheet_tag }}
+    {{ 'jquery.fancybox.css' | asset_url | stylesheet_tag }}
+    {{ 'main.css' | asset_url | stylesheet_tag }}
+
+    {{ 'mobile-detect.js' | asset_url | script_tag }}
+    {{ 'modernizr-2.8.3.min.js' | asset_url | script_tag }}
+    {{ 'mobile-detect-modernizr.js' | asset_url | script_tag }}
+    {{ 'jquery-1.11.3.min.js' | asset_url | script_tag }}
+    
+    <!-- ############################# REQUIRED BY SHOPIFY ############################# -->
+    {{ content_for_header }}
+    {{ 'option_selection.js' | asset_url | script_tag }}
+    {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+    {% if template contains 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+    {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+    {% endif %}
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <!--[if lt IE 9 ]>
+            <div class="browserupgrade">You are using an <strong>OUTDATED</strong> browser. Please <a href="http://browsehappy.com/"><strong>upgrade your browser</strong></a> to improve your experience.</div>
+    <![endif]-->
+
+
+        {% include 'nav_bar' %}
+
+    <main class="main" role="main">
+    {{ content_for_layout }}
+    </main>
+
+
+        {% include 'footer' %}
+
+    <!-- Javascript compiled plugins -->
+    {{ 'bootstrap.js' | asset_url | script_tag }}
+    {{ 'hogan-3.0.1.js' | asset_url | script_tag }}
+    {{ 'jquery.royalslider.min.js' | asset_url | script_tag }}
+    {{ 'instafeed.min.js' | asset_url | script_tag }}
+    {{ 'owl.carousel.min.js' | asset_url | script_tag }}
+    {{ 'imagesloaded.pkgd.min.js' | asset_url | script_tag }}
+    {{ 'isotope.js' | asset_url | script_tag }}
+    {{ 'jquery.fitvids.js' | asset_url | script_tag }}
+    {{ 'jquery.fancybox.js' | asset_url | script_tag }}
+    {{ 'mailchimp.js' | asset_url | script_tag }}
+    {{ 'jquery-scrolltofixed-min.js' | asset_url | script_tag }}
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+
+
+    {{ 'main.js' | asset_url | script_tag }}
+    {{ 'app.js' | asset_url | script_tag }}
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

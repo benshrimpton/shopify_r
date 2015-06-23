@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'OptimaLTStd';
+    src: url('OptimaLTStd.eot');
+    src: url('OptimaLTStd.eot') format('embedded-opentype'),
+         url('OptimaLTStd.woff2') format('woff2'),
+         url('OptimaLTStd.woff') format('woff'),
+         url('OptimaLTStd.ttf') format('truetype'),
+         url('OptimaLTStd.svg#OptimaLTStd') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OptimaLTStdMedium';
+    src: url('OptimaLTStdMedium.eot');
+    src: url('OptimaLTStdMedium.eot') format('embedded-opentype'),
+         url('OptimaLTStdMedium.woff2') format('woff2'),
+         url('OptimaLTStdMedium.woff') format('woff'),
+         url('OptimaLTStdMedium.ttf') format('truetype'),
+         url('OptimaLTStdMedium.svg#OptimaLTStdMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;         
+}
+
+
+@font-face {
+    font-family: 'OptimaLTStdBold';
+    src: url('OptimaLTStdBold.eot');
+    src: url('OptimaLTStdBold.eot') format('embedded-opentype'),
+         url('OptimaLTStdBold.woff2') format('woff2'),
+         url('OptimaLTStdBold.woff') format('woff'),
+         url('OptimaLTStdBold.ttf') format('truetype'),
+         url('OptimaLTStdBold.svg#OptimaLTStdBold') format('svg');
+    font-weight: normal;
+    font-style: normal;  
+}
+
+@font-face {
+    font-family: 'ACaslonPro';
+    src: url('ACaslonProRegular.eot');
+    src: url('ACaslonProRegular.eot') format('embedded-opentype'),
+         url('ACaslonProRegular.woff2') format('woff2'),
+         url('ACaslonProRegular.woff') format('woff'),
+         url('ACaslonProRegular.ttf') format('truetype'),
+         url('ACaslonProRegular.svg#ACaslonProRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;  
+}
+
+@font-face {
+    font-family: 'ACaslonPro';
+    src: url('ACaslonProItalic.eot');
+    src: url('ACaslonProItalic.eot') format('embedded-opentype'),
+         url('ACaslonProItalic.woff2') format('woff2'),
+         url('ACaslonProItalic.woff') format('woff'),
+         url('ACaslonProItalic.ttf') format('truetype'),
+         url('ACaslonProItalic.svg#ACaslonProItalic') format('svg');
+    font-weight: normal;
+    font-style: italic;  
+}
+
+
+@font-face {
+    font-family: 'ACaslonPro';
+    src: url('ACaslonProSemibold.eot');
+    src: url('ACaslonProSemibold.eot') format('embedded-opentype'),
+         url('ACaslonProSemibold.woff2') format('woff2'),
+         url('ACaslonProSemibold.woff') format('woff'),
+         url('ACaslonProSemibold.ttf') format('truetype'),
+         url('ACaslonProSemibold.svg#ACaslonProSemibold') format('svg');
+    font-weight: bold;
+    font-style: normal;  
+}
+
+@font-face {
+    font-family: 'ACaslonPro';
+    src: url('fonts/ACaslonProSemiboldItalic.eot');
+    src: url('fonts/ACaslonProSemiboldItalic.eot') format('embedded-opentype'),
+         url('fonts/ACaslonProSemiboldItalic.woff2') format('woff2'),
+         url('fonts/ACaslonProSemiboldItalic.woff') format('woff'),
+         url('fonts/ACaslonProSemiboldItalic.ttf') format('truetype'),
+         url('fonts/ACaslonProSemiboldItalic.svg#ACaslonProSemiboldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;  
+}
+
+
+@font-face {
+    font-family: 'Mono Social Icons Font';
+    src: url('MonoSocialIconsFont-1.10.eot');
+    src: url('MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
+         url('MonoSocialIconsFont-1.10.woff') format('woff'),
+         url('MonoSocialIconsFont-1.10.ttf') format('truetype'),
+         url('MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
+    src: url('MonoSocialIconsFont-1.10.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.symbol, a.symbol:before {
+    font-family: 'Mono Social Icons Font';
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+a.symbol:before {
+    content: attr(title);
+    margin-right: 0.3em;
+    font-size: 130%;
+}
+          
+
+
+
+
+
+
+

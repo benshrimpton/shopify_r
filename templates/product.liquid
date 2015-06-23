@@ -1,0 +1,152 @@
+<div id="product" data-productHandle="{{product.handle}}" data-containembroidery="{% if product.tags contains 'emb' %}true{% else %}false{% endif %}" >
+<meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
+<meta itemprop="image" content="{{ product.featured_image.src | product_img_url: 'master' }}" />
+    <section class="product-container">
+
+        <div class="row">
+            
+            <div class="col-md-4 col-md-offset-4">
+
+                
+                <div class="product-gallery-wrapper">
+                    
+                    {% if product.images %}
+                    {% for image in product.images %}
+                    <img src="{{ image | product_img_url: 'master' }}" class="img-fullwidth">
+                    {% endfor %}
+                    {% endif %}
+
+                </div> 
+                
+
+                <div class="mobile-product-gallery-wrapper royalSlider rsDefault" id="mobile-product-gallery-wrapper">
+                    {% if product.images %}
+                    {% for image in product.images %}
+                    <div class="slide">
+                        <img src="{{ image | product_img_url: 'master' }}" class="img-fullwidth">
+                    </div>
+                    
+                    {% endfor %}
+                    {% endif %}                  
+                </div>
+
+
+
+
+            </div>
+
+
+            
+                <div id="product-details-wrapper" class="product-details-wrapper">
+                    <div class="product-wrapper">
+                        <div class="product-header">
+                            <h2>{{product.vendor}}</h2>
+                            <h1>{{product.title}}</h1>
+                            <div class="product-color">
+                               {{ product.description }}
+                            </div>
+
+                        </div>
+                        <div class="product-content">
+                            <form id="product-add-item-form" action="/cart/add" method="post" class="clearfix">
+                                <div class="product-variants">
+                                    <div class="product-variant-price-wrapper">
+                                        <span class="product-variant-price" data-target="price">
+                                        {{ product.selected_or_first_available_variant.price | money }}
+                                        {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
+                                        <del>{{ product.selected_or_first_available_variant.compare_at_price | money }}</del>
+                                        {% endif %}
+                                        </span>
+                                    </div>
+                                    <div id="product-variants-target"></div>
+                                        <div class="product-variant-quantity clearfix">
+                                            <label>Quantity</label>
+                                            <select id="product-variant-quantity" data-target="quantity" name="quantity" data-producthandle="{{product.handle}}"></select>
+                                        </div>
+                                    <div id="product-variant">
+                                        <select id="product-variant-select" name="id"  data-listener='variants' data-productHandle="{{product.handle}}">
+                                            {% for variant in product.variants %}
+                                            <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}" data-options="{{product.options}}" >
+                                                {{ variant.title }} - {{ variant.price | money }}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div><!-- ./product-variants -->
+
+                                
+                                <div class="product-desc-wrapper">
+                                   <div class="product-desc-title">
+                                       description
+                                   </div>
+                                   <div class="product-desc-copy">
+                                       we accept returns within 14 days of your receipt for regular piece items, 7days for all items. Click here for more detail.
+                                   </div>
+                                   <div class="product-desc-title">
+                                       delivery/returns
+                                   </div>
+                                   <div class="product-desc-copy">
+                                       we accept returns within 14 days of your receipt for regular piece items, 7days for all items. Click here for more detail.
+                                   </div>
+                                </div>
+
+                                <div class="product-add-item">
+                                    {% unless product.available %}
+                                    <div class="product-sold-out">Sold Out</div>
+                                    {% else %}
+                                    <input type="submit" id="product-add-to-cart" class="" name="add" value="ADD TO BAG" />
+                                    {% endunless %}
+                                </div>
+
+
+
+
+
+
+                            </form>
+                        </div><!-- product-content -->
+                    </div><!--  product-wrapper-->
+                </div><!-- product-details-wrapper -->
+            
+
+        </div><!-- row -->
+    </section><!-- product-container -->
+
+
+
+
+
+    {% comment %}
+
+    <section class="related-wrapper container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                {% include 'related-products' %}
+            </div>
+        </div>
+    </section>
+    {% endcomment %}
+
+
+
+
+
+
+</div><!-- product-page -->
+
+    <script id="product-data" type="application/json">
+        {{product | json}}
+    </script>
+    <script id="template-product-variants" type="text/mustache">
+        <%# optionName1 %>
+            <div data-option="1" class="product-option clearfix" data-option-position="0">
+                    <div class="option-title">Select <% optionName1 %></div>
+                    <div class="option-select-wrapper">
+                        <%#option1%>
+                        <a href="javascript:void(0);"  data-option-value="<%option%>" data-variant-id="<%id%>"><%option%></a>
+                        <%/option1 %>
+                    </div>
+            </div>
+        <%/ optionName1 %>
+    </script>
+

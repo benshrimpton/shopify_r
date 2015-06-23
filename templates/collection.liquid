@@ -1,0 +1,46 @@
+{% comment %}{% include 'breadcrumbs' %}{% endcomment %}
+<!-- Begin no products -->
+{% if collection.products.size == 0 %}
+
+<div class="no-products-warning text-center">
+    <h2>No products found</h2>
+</div>
+
+{% else %}
+{% paginate collection.products by settings.pagination_limit %}
+
+<!-- Begin Main Products Loop -->
+<div class="collection-page">
+
+    <div class="row">
+        <section class="col-sm-2">
+
+                {% include 'products_filter' %}
+
+
+        </section>
+
+        <section class="col-sm-10" id="ajax-wrapper">
+            <div class="collection-products-wrapper"  id="ajax-target">
+                <div class="row">
+                    {% for product in collection.products %}
+                    {% if product.handle != "embroidery"  %}
+                    {% include 'product-loop' with collection.handle %}
+                    {% endif %}
+                    {% endfor %}
+                </div>                    
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+</div>
+
+<!-- QUICK VIEW MODAL -->
+{% include 'quickview-modal' %}
+{% include 'pagination' %}
+{% endpaginate %}
+{% endif %}
